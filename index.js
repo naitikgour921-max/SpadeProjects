@@ -8,11 +8,12 @@ const { simpleParser } = require('mailparser');
 // ⚙️ SYSTEM CONFIGURATION
 const API_ID = 36188166; 
 const API_HASH = 'f75da8acb6bddca31c30f4bf3de8e3e7'; 
-const BOT_TOKEN = '8608123157:AAEx-iUMFy9U8Y_X4KY2-dVC_HVF77zxNPw'; 
+const BOT_TOKEN = '8608123157:AAEx-iUMFy9U8Y_X4KY2-dVC_HVF77zxNPw'; // Naya Token Update Kar Diya Hai
 const BANNER_URL = 'https://i.ibb.co/Wc2S5Lp/telegram-banner-placeholder.png'; 
 
 // 🚀 MONGODB CONFIGURATION
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://mongo:fIpkROyzmMvcyQGDXvMERqsFqpyuhzsL@mongodb.railway.internal:27017/SpadeAdsBot';
+// Ab code process.env.MONGO_URL dhoondhega (Jo aapne Railway me daala hai)
+const MONGO_URI = process.env.MONGO_URL || process.env.MONGO_URI || 'mongodb://mongo:fIpkROyzmMvcyQGDXvMERqsFqpyuhzsL@mongodb.railway.internal:27017/SpadeAdsBot';
 
 // 🛡 ADMIN & EMAIL CONFIGURATION
 const ADMIN_ID = 7901189048; 
@@ -88,7 +89,7 @@ async function loadDatabase() {
         console.log(`✅ Loaded ${users.length} users into memory.`);
     } catch (error) {
         console.log("❌ MongoDB Connection Error:", error);
-        notifyAdminError("Database Startup", error.message, "Check your MONGO_URI in Railway Variables. Ensure the database service is running and the URL is correct.");
+        notifyAdminError("Database Startup", error.message, "Check your MONGO_URL in Railway Variables. Ensure the database service is running and the URL is correct.");
     }
 }
 
@@ -150,7 +151,6 @@ const getMainMenu = (userId) => {
         ? [Markup.button.callback('💎 Premium Active', 'premium_status')] 
         : [Markup.button.callback('🛒 Upgrade Premium', 'upgrade_premium')];
 
-    // Admin button removed per request. Menu is strictly for user actions.
     const buttons = [
         [Markup.button.callback('🟢 Add Account', 'add_account'), Markup.button.callback('🔵 Manage Accounts', 'manage_account')],
         [Markup.button.callback('📝 Set Ad Msg', 'select_set_ad'), Markup.button.callback('⏱️ Change Delay', 'select_delay')],
