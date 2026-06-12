@@ -8,7 +8,7 @@ const { simpleParser } = require('mailparser');
 // ⚙️ SYSTEM CONFIGURATION
 const API_ID = 36188166; 
 const API_HASH = 'f75da8acb6bddca31c30f4bf3de8e3e7'; 
-const BOT_TOKEN = '8608123157:AAFIoyRxw_tXR-S9mVOj_E_31Op4Vo9GzKg'; 
+const BOT_TOKEN = '8608123157:AAHdn_8POtjdTjPbjz5Rq-LxjIi3tr12VgU'; 
 const BANNER_URL = 'https://i.ibb.co/Wc2S5Lp/telegram-banner-placeholder.png'; 
 
 // 🚀 MONGODB CONFIGURATION (Isolated database: SpadeAdsBot)
