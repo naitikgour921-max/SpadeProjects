@@ -1,0 +1,20 @@
+{
+  "name": "spadeads-pro",
+  "version": "2.0.0",
+  "description": "SpadeAds Pro - Multi Account Telegram Broadcast Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.7.1",
+    "mongoose": "^8.0.0",
+    "telegraf": "^4.16.3",
+    "telegram": "^2.26.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
